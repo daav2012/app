@@ -105,7 +105,7 @@ async function createResources() {
         const data1 = {
             "type": "web_hook",
             "config": {
-                url: "http://" + process.env.WEBHOOKS_HOST +":3001/api/saver-webhook",
+                url: "http://" + process.env.EMQX_NODE_HOST +":3001/api/saver-webhook",
                 headers: {
                     token: process.env.EMQX_API_TOKEN
                 },
@@ -117,7 +117,7 @@ async function createResources() {
         const data2 = {
             "type": "web_hook",
             "config": {
-                url: "http://" + process.env.WEBHOOKS_HOST +":3001/api/alarm-webhook",
+                url: "http://" + process.env.EMQX_NODE_HOST +":3001/api/alarm-webhook",
                 headers: {
                     token: process.env.EMQX_API_TOKEN
                 },
@@ -169,9 +169,9 @@ global.check_mqtt_superuser = async function checkMqttSuperUser(){
         {
           publish: ["#"],
           subscribe: ["#"],
-          userId: "emqxmqttsuperuser",
-          username: process.env.EMQX_NODE_SUPERUSER_USER,
-          password: process.env.EMQX_NODE_SUPERUSER_PASSWORD,
+          userId: "aaaaaaaaaaa",
+          username: "superuser",
+          password: "superuser",
           type: "superuser",
           time: Date.now(),
           updatedTime: Date.now()
