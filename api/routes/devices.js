@@ -376,7 +376,7 @@ async function deleteAllAlarmRules(userId, dId) {
 
     if (rules.length > 0) {
       asyncForEach(rules, async rule => {
-        const url = "http://"+process.env.EMQX_API_HOST+":8085/api/v4/rules/" + rule.emqxRuleId;
+        const url = "http://"+process.env.EMQX_NODE_HOST+":8085/api/v4/rules/" + rule.emqxRuleId;
         const res = await axios.delete(url, auth);
       });
 
